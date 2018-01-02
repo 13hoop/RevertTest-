@@ -1,0 +1,34 @@
+//
+//  YRQuestionDetailViewController.m
+//  SDBoneRecovery
+//
+//  Created by YongRen on 2017/12/6.
+//  Copyright © 2017年 13hoop. All rights reserved.
+//
+
+#import "YRQuestionDetailViewController.h"
+#import "MBProgressHUD.h"
+#import "SDBoneRecoveryHttpAPI.h"
+#import "YRQuestionBasicDetailTableViewCell.h"
+#import "YRQuestionAudioDetailTableViewCell.h"
+#import "YRQuestionMixMediaDetailTableViewCell.h"
+#import "YRMediaDetailCellCollectionViewCell.h"
+#import "YRQuestionExpertDetailTableViewCell.h"
+#import "YRQuestionDetialModel.h"
+#import "YRQuestionFlowUpModel.h"
+
+@interface YRQuestionDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLb;
+
+@property (strong, nonatomic) NSArray *mediaMainArr; // 主贴 media 数据源
+@property (strong, nonatomic) UICollectionView *mediaMianCollectionView;
+@property (strong, nonatomic) NSArray *mediaArr; // collection 数据源
+
+@property (strong, nonatomic) YRQuestionDetialModel *detailModel;
+@property (strong, nonatomic) NSArray *flowUpArr;
+@property (strong, nonatomic) NSArray *tableViewTranstedArr;
+
+
+@end
+
